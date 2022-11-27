@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.seriouscreeper.tfctweaks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinEntity",
+    "MixinVesselItem"
+  ],
+  "client": [
+  ],
+  "refmap": "sfcaddon.refmap.json"
+}
