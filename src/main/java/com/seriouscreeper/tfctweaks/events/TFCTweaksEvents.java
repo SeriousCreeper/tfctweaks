@@ -18,13 +18,15 @@ public final class TFCTweaksEvents {
     public static void init() {
         final IEventBus bus = MinecraftForge.EVENT_BUS;
 
-        if(TFCTweaksConfig.SERVER.preventMobsOnCertainBlocks.get()) {
-            bus.addListener(TFCTweaksEvents::onLivingSpawnCheck);
-        }
+        bus.addListener(TFCTweaksEvents::onLivingSpawnCheck);
     }
 
 
     public static void onLivingSpawnCheck(LivingSpawnEvent.CheckSpawn event) {
+        if(!TFCTweaksConfig.SERVER.preventMobsOnCertainBlocks.get()) {
+            return;
+        }
+
         final LivingEntity entity = event.getEntityLiving();
         final LevelAccessor level = event.getWorld();
         final MobSpawnType spawn = event.getSpawnReason();
