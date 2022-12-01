@@ -7,7 +7,6 @@ import java.util.function.Function;
 
 public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue mountsBypassSlowdown;
-    public final ForgeConfigSpec.BooleanValue preventMobsOnCertainBlocks;
     public final ForgeConfigSpec.BooleanValue reverseExtractSmallVesselOrder;
 
     ServerConfig(ForgeConfigSpec.Builder innerBuilder) {
@@ -15,8 +14,7 @@ public class ServerConfig {
 
         innerBuilder.push("general");
 
-        mountsBypassSlowdown = builder.apply("mountsBypassSlowdown").comment("Riding a mount prevents slowdown from grass/leaves").define("mountsBypassSlowdown", true);
-        preventMobsOnCertainBlocks = builder.apply("preventMobsOnCertainBlocks").comment("If enabled, mobs can only spawn on blocks with the tag 'mob_can_spawn'").define("preventMobsOnCertainBlocks", true);
+        mountsBypassSlowdown = builder.apply("mountsBypassSlowdown").comment("Riding a mount prevents slowdown from grass").define("mountsBypassSlowdown", true);
         reverseExtractSmallVesselOrder = builder.apply("reverseExtractSmallVesselOrder").comment("If enabled, right clicking a small vessel in your inventory will take out the latest item, not the first item you placed into it").define("reverseExtractSmallVesselOrder", true);
     }
 }

@@ -19,8 +19,6 @@ public class TFCTweaksTags {
 
     public static class Blocks
     {
-        public static final TagKey<Block> MOB_CAN_SPAWN = create("mob_can_spawn");
-
         private static TagKey<Block> create(String id) {
             return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(TFCTweaks.MOD_ID, id));
         }
